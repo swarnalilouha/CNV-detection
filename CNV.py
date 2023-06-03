@@ -1,4 +1,5 @@
-## Script for the detection of CNV's in the genome by simulation of read depthS across the genome using a gaussian distribution.
+## Script for plotting distribution of read depth and filtering out amplifications and deletions
+## First Part: plotting distribution of read depth and filtering out regions of high read depths
 #!/usr/bin/env python
 
 import pandas as pd
@@ -64,7 +65,7 @@ stats2
 make_plots(remove_repeats, stats2)
 
 
-##Code for CWL2
+## Second part: Filtering out amplification/deletion after correcting for read depth biases
 ## Function for detecting amplifications 
 def CNV(df1, m):
 	return df1[abs(df1["coverage"] - np.mean(df1["coverage"]) > m * np.std(df1["coverage"]))]
