@@ -1,4 +1,4 @@
-##Scrip for plotting read depths across specific genomic regions
+##Script for plotting read depths across specific genomic regions
 #!/usr/bin/env python
 
 import pandas as pd
